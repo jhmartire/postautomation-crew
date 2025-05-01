@@ -15,3 +15,5 @@ tailored_resume.*
 src/post_automation/*.pdf
 
 .env
+.venv/
+.venv/
