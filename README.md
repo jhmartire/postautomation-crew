@@ -1,41 +1,90 @@
-# PostAutomation Crew
+# PostAutomation Crew 🤖
 
-Welcome to the PostAutomation Crew project, powered by [crewAI](https://crewai.com). This project is designed to help you tailor your resume to a specif job application.
+![Robotic Crew](src/post_automation/img/robotic_crew.png)
 
-## Installation
+Sistema de automação de currículos com múltiplos agentes de IA usando [CrewAI](https://crewai.com). Este projeto ajuda você a:
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+- 📎 Fazer upload do seu currículo (PDF)
+- 🧠 Rodar análise automatizada com IA para validação do CV
+- 🚀 Otimizar o currículo para vagas reais (com GitHub e portfólio, se disponíveis)
+- 📄 Gerar um currículo novo (Markdown + PDF)
+- ✉️ Criar uma cover letter sob demanda
+- 🔐 Proteger acesso com login e senha (Streamlit)
 
-First, if you haven't already, install uv:
+---
 
+## 🚀 Como rodar local
+
+### 1. Clone o projeto e entre na pasta
 ```bash
-pip install uv
+git clone https://github.com/jhmartire/postautomation-crew.git
+cd postautomation-crew
 ```
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
+### 2. Crie seu ambiente virtual e ative
 ```bash
-crewai install
+python -m venv .venv
+source .venv/bin/activate  # Mac/Linux
+.venv\Scripts\activate  # Windows
 ```
-### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+### 3. Instale as dependências
+```bash
+pip install -r requirements.txt
+```
 
-- Modify `src/post_automation/config/agents.yaml` to define your agents
-- Modify `src/post_automation/crew.py` to define tasks, add your own logic, and change paths to your files
-- Modify `src/post_automation/main.py` to add custom inputs for your agents and tasks
+### 4. Crie um arquivo `.env`
+```dotenv
+OPENAI_API_KEY=sk-...
+```
 
-## Running the Project
+### 5. Rode com Streamlit
+```bash
+streamlit run src/post_automation/app.py
+```
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+---
 
-python src/post_automation/main.py
+## 📦 Estrutura do Projeto
+```
+├── requirements.txt         # Dependências
+├── .env                     # Chave da API (não sobe pro Git)
+├── src/post_automation/
+│   ├── app.py               # Página Streamlit
+│   ├── run_project.py       # Executa os agentes
+│   ├── main.py              # Execução local no terminal
+│   ├── crew.py              # Lógica de montagem da crew
+│   ├── tools/               # Ferramentas personalizadas
+│   └── config/              # agents.yaml + tasks.yaml
+```
 
-This command initializes the post_automation Crew, assembling the agents and assigning them tasks as defined in your configuration.
+---
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+## 🔐 Acesso Seguro
+O sistema exige login com usuário e senha definidos diretamente no código do `app.py`. Ideal para evitar uso indevido quando se usa uma API paga como a da OpenAI.
 
-## Understanding Your Crew
+---
 
-The post_automation Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `post_automation/crew.py`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+## ☁️ Deploy no Streamlit Cloud
+1. Suba este repositório para o seu GitHub ✅
+2. Vá em [streamlit.io/cloud](https://streamlit.io/cloud)
+3. Clique em **New App**
+4. Conecte ao seu repositório e aponte para:  
+   **`src/post_automation/app.py`**
+5. Adicione a variável de ambiente `OPENAI_API_KEY`
+
+---
+
+## 📌 Requisitos
+- Python >= 3.10 < 3.13
+- Conta na OpenAI com chave ativa
+- GitHub (para deploy)
+
+---
+
+## 🛡️ Aviso de Segurança
+Nunca suba seu `.env` para o GitHub. O projeto já inclui `.gitignore` configurado para evitar isso.
+
+---
+
+Feito com ❤️ por [@jhmartire](https://github.com/jhmartire)
