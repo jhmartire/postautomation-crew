@@ -6,4 +6,5 @@ markdown2
 pdfkit
 PyMuPDF
 pysqlite3-binary
+setuptools>=65.0.0
 
