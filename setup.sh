@@ -19,6 +19,10 @@ echo "📦 Instalando dependências do requirements.txt..."
 pip install --upgrade pip
 pip install -r requirements.txt
 
+# ⚠️ Remover chromadb para evitar RuntimeError no Streamlit Cloud
+echo "🧹 Removendo chromadb para evitar erro no deploy..."
+pip uninstall -y chromadb
+
 # 4. Criar .env se não existir
 if [ ! -f ".env" ]; then
     echo "🔐 Criando arquivo .env..."
