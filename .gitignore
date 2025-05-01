@@ -14,3 +14,4 @@ db/
 tailored_resume.*
 src/post_automation/*.pdf
 
+.env
