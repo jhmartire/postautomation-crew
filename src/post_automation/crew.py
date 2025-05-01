@@ -1,4 +1,6 @@
-from crewai import Agent, Crew, Process, Task
+from crewai.core.agent import Agent
+from crewai.core.crew import Crew, Process
+from crewai.core.task import Task
 from crewai.project import CrewBase, agent, crew
 from dotenv import load_dotenv
 from crewai_tools import (
@@ -9,6 +11,7 @@ from crewai_tools import (
     PDFSearchTool
 )
 from src.post_automation.tools.custom_tool import SkillMatchTool, UKEnglishTranslatorTool, CoverLetterTool
+
 
 load_dotenv()
 
