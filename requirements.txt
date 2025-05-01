@@ -5,5 +5,4 @@ markdown2
 pdfkit
 PyMuPDF
 crewai==0.20.4
-
-
+chromadb==0.0.0
