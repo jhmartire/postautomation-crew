@@ -1,0 +1,7 @@
+streamlit
+crewai>=0.22.8
+crewai-tools>=0.1.11
+python-dotenv
+markdown2
+pdfkit
+PyMuPDF
