@@ -1,8 +1,9 @@
 streamlit
-crewai==0.14.11
+crewai==0.28.8
 crewai-tools>=0.1.11
 python-dotenv
 markdown2
 pdfkit
 PyMuPDF
 pysqlite3-binary
+
