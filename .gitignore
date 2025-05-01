@@ -8,3 +8,5 @@ __pycache__/
 db/
 src/post_automation/data/
 
+.DS_Store
+.ipynb_checkpoints/
