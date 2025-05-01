@@ -10,3 +10,7 @@ src/post_automation/data/
 
 .DS_Store
 .ipynb_checkpoints/
+db/
+tailored_resume.*
+src/post_automation/*.pdf
+
