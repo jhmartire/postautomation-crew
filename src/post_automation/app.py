@@ -1,4 +1,9 @@
+# --- CORREÇÃO para evitar erro com chromadb/SQLite no Streamlit Cloud ---
+__import__('pysqlite3')
 import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# -------------------------------------------------------------------------
+
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
